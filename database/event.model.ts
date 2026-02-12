@@ -181,3 +181,5 @@ eventSchema.pre('save', async function() {
 });
 
 export const Event = mongoose.model<IEvent>('Event', eventSchema);
+
+export default Event
