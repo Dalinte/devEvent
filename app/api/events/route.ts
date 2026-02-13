@@ -65,7 +65,7 @@ export async function GET() {
     const events = await Event.find().sort({ createdAt: -1 });
 
     return NextResponse.json(
-      { message: 'Event fetched successfully', event: events },
+      { message: 'Event fetched successfully', events: events },
       { status: 200 }
     );
   } catch (e) {
