@@ -17,7 +17,6 @@ const EventDetailsPage = async ({ params }: { params: Promise<{ slug: string }> 
 
   if (!event) return notFound()
 
-  console.log(event.agenda);
 
   return (
     <section id="event">
