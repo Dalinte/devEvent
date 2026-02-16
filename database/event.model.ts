@@ -180,6 +180,6 @@ eventSchema.pre('save', async function() {
   }
 });
 
-export const Event = mongoose.model<IEvent>('Event', eventSchema);
+export const Event = mongoose.models.Event || mongoose.model<IEvent>('Event', eventSchema);
 
 export default Event
