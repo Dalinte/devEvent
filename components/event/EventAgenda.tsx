@@ -1,0 +1,15 @@
+interface IProps {
+  agendaItems: string[]
+}
+
+const EventAgenda = ({agendaItems}: IProps) => {
+  return (
+    <div className={'agenda'}>
+      <h2>Agenda</h2>
+      <ul>
+        {agendaItems.map((item, index) => <li key={item}>{item}</li>)}
+      </ul>
+    </div>
+  );
+};
+export default EventAgenda;
