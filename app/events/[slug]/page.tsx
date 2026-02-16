@@ -13,7 +13,6 @@ const EventDetailsPage = async ({ params }: { params: Promise<{ slug: string }> 
   const { slug } = await params;
   const response = await fetch(`${BASE_URL}/api/events/${slug}`);
   if (!response.ok) {
-    console.log('response', response);
     if (response.status === 404) return notFound();
     throw new Error(`Failed to fetch event: ${response.status}`);
   }
