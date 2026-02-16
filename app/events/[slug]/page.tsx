@@ -9,6 +9,10 @@ import EventTags from '@/components/event/EventTags';
 const EventDetailsPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const response = await fetch(`${BASE_URL}/api/events/${slug}`);
+  if (!response.ok) {
+    if (response.status === 404) return notFound();
+    throw new Error(`Failed to fetch event: ${response.status}`);
+  }
   const { event }: { event: IEvent } = await response.json();
 
   if (!event) return notFound()
