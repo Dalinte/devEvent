@@ -1,8 +1,7 @@
 import ExploreButton from '@/components/ExploreButton';
-import EventCard from '@/components/EventCard';
+import EventCard from '@/components/event/EventCard';
 import { type IEvent } from '@/database';
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+import { BASE_URL } from '@/lib/global.consts';
 
 const Page = async () => {
   const response = await fetch(`${BASE_URL}/api/events`);
@@ -21,11 +20,13 @@ const Page = async () => {
         <h3>Featured Events</h3>
 
         <ul className="events">
-          {events && events.length > 0 && events.map((event: IEvent) => (
-            <li key={event.title}>
-              <EventCard {...event} />
-            </li>
-          ))}
+          {events &&
+            events.length > 0 &&
+            events.map((event: IEvent) => (
+              <li key={event.title}>
+                <EventCard {...event} />
+              </li>
+            ))}
         </ul>
       </div>
     </section>
