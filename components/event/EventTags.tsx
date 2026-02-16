@@ -8,7 +8,6 @@ const EventTags = ({tags}: IProps) => {
       {tags.map((tag, index) => (
         <div className={'pill'} key={`${tag}-${index}`}>{tag}</div>
       ))}
-      ))}
     </div>
   );
 };
