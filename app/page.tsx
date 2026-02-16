@@ -1,7 +1,7 @@
 import ExploreButton from '@/components/ExploreButton';
 import EventCard from '@/components/event/EventCard';
 import { type IEvent } from '@/database';
-import { BASE_URL } from '@/lib/global.conts';
+import { BASE_URL } from '@/lib/global.consts';
 
 const Page = async () => {
   const response = await fetch(`${BASE_URL}/api/events`);
