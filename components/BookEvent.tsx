@@ -22,7 +22,8 @@ const BookEvent = ({ eventId, slug }: IProps) => {
       posthog.capture('event_booked', { email, eventId, slug })
     } else {
       console.log('Booking creation failed');
-      posthog.captureException('event_booked', { email, eventId, slug })
+      const err = new Error('Booking creation failed');
+      posthog.captureException(err, { email, eventId, slug })
     }
   };
 
