@@ -1,20 +1,21 @@
 import ExploreButton from '@/components/ExploreButton';
 import EventCard from '@/components/event/EventCard';
 import { type IEvent } from '@/database';
-import { BASE_URL } from '@/lib/global.consts';
-import { cacheLife } from 'next/cache';
+// import { BASE_URL } from '@/lib/global.consts';
+// import { cacheLife } from 'next/cache';
 
 const Page = async () => {
-  'use cache';
-  cacheLife('hours');
-  const response = await fetch(`${BASE_URL}/api/events`);
-  const { events } = await response.json();
+  // 'use cache';
+  // cacheLife('hours');
+  // const response = await fetch(`${BASE_URL}/api/events`);
+  // const { events } = await response.json();
+  const events: IEvent[] = []
 
   return (
     <section>
       <h1 className="text-center">
         The Hub for Every Dev <br />
-        Event You Can't Miss
+        Event You Can&apos;t Miss
       </h1>
       <p className="text-center mt-5">Hackathons, Meetups and Conferences, All in One Place</p>
       <ExploreButton />

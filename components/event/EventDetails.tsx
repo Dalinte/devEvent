@@ -93,7 +93,7 @@ const EventDetails = async ({ params }: IProps) => {
         <div className="flex w-full flex-col gap-4 pt-20">
           <h2>Similar Events</h2>
           <div className="events">
-            {similarEvents.map((event, index) => (
+            {similarEvents.map((event) => (
               <EventCard key={event.slug} {...event} />
             ))}
           </div>
